@@ -8,115 +8,87 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         h1 {
             color: #333;
+            text-align: center;
         }
         .question {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         .question p {
             margin: 0;
+            font-size: 18px;
+            font-weight: bold;
         }
         .question label {
             display: block;
+            margin-top: 10px;
         }
         #submit {
             display: block;
-            margin: 20px 0;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #submit:hover {
+            background-color: #45a049;
         }
         #result {
             font-weight: bold;
+            text-align: center;
         }
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background-color: #f0f0f0;
-}
-
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    color: #333;
-    text-align: center;
-}
-
-.question {
-    margin-bottom: 20px;
-}
-
-.question p {
-    margin: 0;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.question label {
-    display: block;
-    margin-top: 10px;
-}
-
-#submit {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-#submit:hover {
-    background-color: #45a049;
-}
-
-#result {
-    font-weight: bold;
-    text-align: center;
-}
-
     </style>
 </head>
 <body>
-    <h1>Quiz: Die 48 Gesetze der Macht</h1>
-    <div id="quiz-container"></div>
-    <button id="submit">Abschicken</button>
-    <div id="result"></div>
+    <div class="container">
+        <h1>Quiz: Die 48 Gesetze der Macht</h1>
+        <div id="quiz-container"></div>
+        <button id="submit">Abschicken</button>
+        <div id="result"></div>
+    </div>
+
     <script>
         const quizData = [
             {
-                question: "Welches Gesetz betont die Wichtigkeit, deinen Vorgesetzten nicht zu überstrahlen?",
-                a: "Gesetz 1",
-                b: "Gesetz 2",
-                c: "Gesetz 3",
-                d: "Gesetz 4",
+                question: "Welches Gesetz besagt, dass du niemals die Position deines Vorgesetzten gefährden sollst?",
+                a: "Gesetz 1: Niemals die Position deines Vorgesetzten gefährden",
+                b: "Gesetz 2: Nimm nie das Zepter der Macht in die Hand",
+                c: "Gesetz 3: Verachte die Schwachen",
+                d: "Gesetz 4: Sprich immer die Wahrheit, auch wenn es wehtut",
                 correct: "a"
             },
             {
-                question: "Welches Gesetz rät dir, immer weniger zu sagen als nötig?",
-                a: "Gesetz 5",
-                b: "Gesetz 4",
-                c: "Gesetz 3",
-                d: "Gesetz 6",
-                correct: "b"
+                question: "Welches Gesetz warnt davor, sich niemals auf das Mitleid anderer zu verlassen?",
+                a: "Gesetz 5: Verlass dich nicht auf das Mitleid anderer",
+                b: "Gesetz 6: Spiele mit den Erwartungen der Menschen",
+                c: "Gesetz 7: Lass andere für deine Fehler bezahlen",
+                d: "Gesetz 8: Mach dich unentbehrlich",
+                correct: "a"
             },
             {
-                question: "Welches der folgenden Gesetze bezieht sich darauf, deine eigenen Kräfte zu nutzen und nicht auf andere angewiesen zu sein?",
-                a: "Gesetz 7",
-                b: "Gesetz 6",
-                c: "Gesetz 5",
-                d: "Gesetz 2",
-                correct: "d"
-            }
+                question: "Welches Gesetz rät dazu, stets umfangreich zu kommunizieren, jedoch wenig zu sagen?",
+                a: "Gesetz 9: Spreche immer weniger, als nötig ist",
+                b: "Gesetz 10: Rede nie über deine Pläne",
+                c: "Gesetz 11: Vermeide langfristige Verpflichtungen",
+                d: "Gesetz 12: Spiele auf Unsicherheit",
+                correct: "a"
+            },
+            // Füge hier weitere Fragen hinzu
         ];
 
         const quizContainer = document.getElementById('quiz-container');
@@ -152,32 +124,5 @@ h1 {
 
         loadQuiz();
     </script>
-const quizData = [
-    {
-        question: "Welches Gesetz besagt, dass du niemals die Position deines Vorgesetzten gefährden sollst?",
-        a: "Gesetz 1: Niemals die Position deines Vorgesetzten gefährden",
-        b: "Gesetz 2: Nimm nie das Zepter der Macht in die Hand",
-        c: "Gesetz 3: Verachte die Schwachen",
-        d: "Gesetz 4: Sprich immer die Wahrheit, auch wenn es wehtut",
-        correct: "a"
-    },
-    {
-        question: "Welches Gesetz warnt davor, sich niemals auf das Mitleid anderer zu verlassen?",
-        a: "Gesetz 5: Verlass dich nicht auf das Mitleid anderer",
-        b: "Gesetz 6: Spiele mit den Erwartungen der Menschen",
-        c: "Gesetz 7: Lass andere für deine Fehler bezahlen",
-        d: "Gesetz 8: Mach dich unentbehrlich",
-        correct: "a"
-    },
-    {
-        question: "Welches Gesetz rät dazu, stets umfangreich zu kommunizieren, jedoch wenig zu sagen?",
-        a: "Gesetz 9: Spreche immer weniger, als nötig ist",
-        b: "Gesetz 10: Rede nie über deine Pläne",
-        c: "Gesetz 11: Vermeide langfristige Verpflichtungen",
-        d: "Gesetz 12: Spiele auf Unsicherheit",
-        correct: "a"
-    },
-    // Füge hier weitere Fragen hinzu
-];
 </body>
 </html>
